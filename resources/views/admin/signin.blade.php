@@ -26,7 +26,7 @@
 
     <div class="mb-3">
       <label for="email" class="form-label">Username</label>
-      <input type="email" value="{{ old('email') }}" name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp">
+      <input type="email" value="admin@admin.com" name="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp">
         @error('email')
             <small class="invalid-feedback">{{ $message }}</small>
         @enderror
@@ -37,7 +37,7 @@
       <label for="password" class="form-label">Password</label>
 
       <div class="input-group" id="show_hide_password">
-        <input type="password" name="password" class="form-control @error('email') is-invalid @enderror" id="password">
+        <input type="password" name="password" value="password" class="form-control @error('email') is-invalid @enderror" id="password">
         <span class="input-group-text"><a href="javascript:void(0);"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></span>
         @error('email')
             <small class="invalid-feedback">{{ $message }}</small>

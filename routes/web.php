@@ -31,7 +31,8 @@ use App\Http\Controllers\ProfileController;
 // });
 
 // Public Area
-Route::get('/',[CustomerController::class,'index'])->name('customer#index');
+//Route::get('/',[CustomerController::class,'index'])->name('customer#index');
+Route::get('/',[AdminController::class,'signin']);
 Route::get('signup',[CustomerController::class,'signup'])->name('customer#signup');
 Route::get('signin',[CustomerController::class,'signin'])->name('customer#signin');
 

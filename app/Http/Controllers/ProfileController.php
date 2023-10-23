@@ -36,7 +36,7 @@ class ProfileController extends Controller
             $ambitionImage = $request->file('ambition_icon');
             // Get the original file name
             $ambitionName = uniqid().'-'.$ambitionImage->getClientOriginalName();
-            $ambitionImage->StoreAs($ambitionName);
+            $ambitionImage->StoreAs('public',$ambitionName);
 
             $profileData['ambition_icon'] = $ambitionName;
         endif;
@@ -45,7 +45,7 @@ class ProfileController extends Controller
             $purposeImage = $request->file('purpose_icon');
             // Get the original file name
             $purposeName = uniqid().'-'.$purposeImage->getClientOriginalName();
-            $purposeImage->StoreAs($purposeName);
+            $purposeImage->StoreAs('public',$purposeName);
 
             $profileData['purpose_icon'] = $purposeName;
         endif;
@@ -54,7 +54,7 @@ class ProfileController extends Controller
             $feature_1_Image = $request->file('feature_image_1');
             // Get the original file name
             $feature_1_Name = uniqid().'-'.$feature_1_Image->getClientOriginalName();
-            $feature_1_Image->StoreAs($feature_1_Name);
+            $feature_1_Image->StoreAs('public',$feature_1_Name);
 
             $profileData['image_1'] = $feature_1_Name;
         endif;
@@ -63,7 +63,7 @@ class ProfileController extends Controller
             $feature_2_Image = $request->file('feature_image_2');
             // Get the original file name
             $feature_2_Name = uniqid().'-'.$feature_2_Image->getClientOriginalName();
-            $feature_2_Image->StoreAs($feature_2_Name);
+            $feature_2_Image->StoreAs('public',$feature_2_Name);
 
             $profileData['image_2'] = $feature_2_Name;
         endif;
