@@ -187,7 +187,24 @@ class ProfileController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $dbProfileData = Profile::find($id);
+        if ( $dbProfileData->ambition_icon != null):
+                Storage::delete('public/'.$dbProfileData->ambition_icon);
+        endif;
+
+        if ($dbProfileData->purpose_icon != null):
+                Storage::delete('public/'.$dbProfileData->purpose_icon);
+        endif;
+
+        if ($dbProfileData->image_1 != null):
+                Storage::delete('public/'.$dbProfileData->image_1);
+        endif;
+
+        if ($dbProfileData->image_2 != null):
+                Storage::delete('public/'.$dbProfileData->image_2);
+        endif;
+        Profile::where('id',$id)->delete();
+        return back()->with(['success'=>'Your Profile Data has been deleted.']);
     }
 
     private function getProfileData($request){

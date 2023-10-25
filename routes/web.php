@@ -53,5 +53,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['admin_auth:admin']],function(){
     Route::post('/profile/store',[ProfileController::class,'store'])->name('admin#profile#store');
     Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('admin#profile#edit');
     Route::post('/profile/update/{id}',[ProfileController::class,'update'])->name('admin#profile#update');
+    Route::get('/profile/delete/{id}',[ProfileController::class,'destroy'])->name('admin#profile#delete');
 
 });

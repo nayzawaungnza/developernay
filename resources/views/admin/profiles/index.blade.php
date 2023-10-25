@@ -68,7 +68,7 @@
         <td>
           <a href="{{ route('admin#profile#edit', $profile->id) }}" class="justify-content-center  btn mb-1 btn-warning d-flex align-items-center"><i class="ti ti-edit"></i></a>
           <a href="#" class="justify-content-center  btn mb-1 btn-success d-flex align-items-center"><i class="ti ti-eye"></i></a>
-          <a href="#" class="justify-content-center  btn mb-1 btn-danger d-flex align-items-center"><i class="ti ti-trash"></i></a>
+          <a href="{{ route('admin#profile#delete', $profile->id) }}" class="justify-content-center  btn mb-1 btn-danger d-flex align-items-center"><i class="ti ti-trash"></i></a>
         </td>
       </tr>
       @endforeach
