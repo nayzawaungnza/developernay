@@ -40,7 +40,7 @@
         <!-- Sidebar scroll-->
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="{{ route('customer#index') }}" target="_blank" class="text-nowrap logo-img">
+            <a href="{{ route('admin#dashboard') }}" target="_blank" class="text-nowrap logo-img">
               <img src="{{ asset('admin/dist/images/logos/dark-logo.svg') }}" class="dark-logo" width="180" alt="" />
               <img src="{{ asset('admin/dist/images/logos/light-logo.svg') }}" class="light-logo"  width="180" alt="" />
             </a>
