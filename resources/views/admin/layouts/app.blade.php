@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="handheldfriendly" content="true" />
     <meta name="MobileOptimized" content="width" />
-    <meta name="description" content="Mordenize" />
+    <meta name="description" content="Developer:Nay" />
     <meta name="author" content="" />
-    <meta name="keywords" content="Mordenize" />
+    <meta name="keywords" content="Developer:Nay" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/dist/images/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/dist/images/logos/favicon.png') }}" />
     {{-- CK Editor --}}
     @yield('ckeditor')
     <!-- Owl Carousel  -->
@@ -27,11 +27,11 @@
   <body>
     <!-- Preloader -->
     <div class="preloader">
-      <img src="{{ asset('admin/dist/images/logos/favicon.ico') }}" alt="loader" class="lds-ripple img-fluid" />
+      <img src="{{ asset('admin/dist/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!-- Preloader -->
     <div class="preloader">
-      <img src="{{ asset('admin/dist/images/logos/favicon.ico') }}" alt="loader" class="lds-ripple img-fluid" />
+      <img src="{{ asset('admin/dist/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme"  data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
@@ -41,8 +41,8 @@
         <div>
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="{{ route('admin#dashboard') }}" target="_blank" class="text-nowrap logo-img">
-              <img src="{{ asset('admin/dist/images/logos/dark-logo.svg') }}" class="dark-logo" width="180" alt="" />
-              <img src="{{ asset('admin/dist/images/logos/light-logo.svg') }}" class="light-logo"  width="180" alt="" />
+              <img src="{{ asset('admin/dist/images/logos/DeveloperNay.png') }}" class="dark-logo" width="113" alt="" />
+              <img src="{{ asset('admin/dist/images/logos/DeveloperNayWhite.png') }}" class="light-logo"  width="180" alt="" />
             </a>
             <div class="close-btn d-lg-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
               <i class="ti ti-x fs-8 text-muted"></i>
@@ -107,7 +107,7 @@
                 <span class="hide-menu">Apps</span>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./app-calendar.html" aria-expanded="false">
+                <a class="sidebar-link" href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-calendar"></i>
                   </span>
@@ -116,7 +116,7 @@
               </li>
               
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./app-chat.html" aria-expanded="false">
+                <a class="sidebar-link" href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-message-dots"></i>
                   </span>
@@ -132,7 +132,7 @@
                 <span class="hide-menu">PAGES</span>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./page-pricing.html" aria-expanded="false">
+                <a class="sidebar-link" href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-currency-dollar"></i>
                   </span>
@@ -140,7 +140,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link" href="./page-faq.html" aria-expanded="false">
+                <a class="sidebar-link" href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-help"></i>
                   </span>
@@ -167,7 +167,7 @@
                 </a>
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="./ui-accordian.html" class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-circle"></i>
                       </div>
@@ -190,7 +190,7 @@
                 </a>
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="./ui-cards.html" class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-circle"></i>
                       </div>
@@ -213,7 +213,7 @@
                 </a>
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="./component-sweetalert.html" class="sidebar-link">
+                    <a href="#" class="sidebar-link">
                       <div class="round-16 d-flex align-items-center justify-content-center">
                         <i class="ti ti-circle"></i>
                       </div>
@@ -243,7 +243,7 @@
                   <button class="btn btn-primary fs-2 fw-semibold lh-sm">Signup</button>
                 </div>
                 <div class="unlimited-access-img">
-                  <img src="../../dist/images/backgrounds/rocket.png" alt="" class="img-fluid">
+                  <img src="{{ asset('admin/dist/images/backgrounds/rocket.png') }}" alt="" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -295,36 +295,36 @@
                           <div class="row">
                             <div class="col-6">
                               <div class="position-relative">
-                                <a href="./app-chat.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-chat.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-chat.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Chat Application</h6>
                                     <span class="fs-2 d-block text-dark">New messages arrived</span>
                                   </div>
                                 </a>
-                                <a href="./app-invoice.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-invoice.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-invoice.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Invoice App</h6>
                                     <span class="fs-2 d-block text-dark">Get latest invoice</span>
                                   </div>
                                 </a>
-                                <a href="./app-contact2.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-mobile.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-mobile.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Contact Application</h6>
                                     <span class="fs-2 d-block text-dark">2 Unsaved Contacts</span>
                                   </div>
                                 </a>
-                                <a href="./app-email.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-message-box.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-message-box.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Email App</h6>
@@ -335,7 +335,7 @@
                             </div>
                             <div class="col-6">
                               <div class="position-relative">
-                                <a href="./page-user-profile.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                     <img src="{{ asset('admin/dist/images/svgs/icon-dd-cart.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
@@ -344,7 +344,7 @@
                                     <span class="fs-2 d-block text-dark">learn more information</span>
                                   </div>
                                 </a>
-                                <a href="./app-calendar.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                     <img src="{{ asset('admin/dist/images/svgs/icon-dd-date.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
@@ -353,18 +353,18 @@
                                     <span class="fs-2 d-block text-dark">Get dates</span>
                                   </div>
                                 </a>
-                                <a href="./app-contact.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-lifebuoy.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-lifebuoy.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Contact List Table</h6>
                                     <span class="fs-2 d-block text-dark">Add new contact</span>
                                   </div>
                                 </a>
-                                <a href="./app-notes.html" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
+                                <a href="#" class="d-flex align-items-center pb-9 position-relative text-decoration-none text-decoration-none text-decoration-none text-decoration-none">
                                   <div class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                    <img src="../../dist/images/svgs/icon-dd-application.svg" alt="" class="img-fluid" width="24" height="24">
+                                    <img src="{{ asset('admin/dist/images/svgs/icon-dd-application.svg') }}" alt="" class="img-fluid" width="24" height="24">
                                   </div>
                                   <div class="d-inline-block">
                                     <h6 class="mb-1 fw-semibold bg-hover-primary">Notes Application</h6>
@@ -429,8 +429,8 @@
               </li>
             </ul>
             <div class="d-block d-lg-none">
-              <img src="../../dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
-              <img src="../../dist/images/logos/light-logo.svg" class="light-logo"  width="180" alt="" />
+              <img src="{{ asset('admin/dist/images/logos/dark-logo.svg') }}" class="dark-logo" width="180" alt="" />
+              <img src="{{ asset('admin/dist/images/logos/light-logo.svg') }}" class="light-logo"  width="180" alt="" />
             </div>
             <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="p-2">
@@ -445,31 +445,31 @@
                 <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
                   <li class="nav-item dropdown">
                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../../dist/images/svgs/icon-flag-en.svg" alt="" class="rounded-circle object-fit-cover round-20">
+                      <img src="{{ asset('admin/dist/images/svgs/icon-flag-en.svg') }}" alt="" class="rounded-circle object-fit-cover round-20">
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                       <div class="message-body" data-simplebar>
                         <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                           <div class="position-relative">
-                            <img src="../../dist/images/svgs/icon-flag-en.svg" alt="" class="rounded-circle object-fit-cover round-20">
+                            <img src="{{ asset('admin/dist/images/svgs/icon-flag-en.svg') }}" alt="" class="rounded-circle object-fit-cover round-20">
                           </div>
                           <p class="mb-0 fs-3">English (UK)</p>
                         </a>
                         <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                           <div class="position-relative">
-                            <img src="../../dist/images/svgs/icon-flag-cn.svg" alt="" class="rounded-circle object-fit-cover round-20">
+                            <img src="{{ asset('admin/dist/images/svgs/icon-flag-cn.svg') }}" alt="" class="rounded-circle object-fit-cover round-20">
                           </div>
                           <p class="mb-0 fs-3">中国人 (Chinese)</p>
                         </a>
                         <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                           <div class="position-relative">
-                            <img src="../../dist/images/svgs/icon-flag-fr.svg" alt="" class="rounded-circle object-fit-cover round-20">
+                            <img src="{{ asset('admin/dist/images/svgs/icon-flag-fr.') }}svg" alt="" class="rounded-circle object-fit-cover round-20">
                           </div>
                           <p class="mb-0 fs-3">français (French)</p>
                         </a>
                         <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                           <div class="position-relative">
-                            <img src="../../dist/images/svgs/icon-flag-sa.svg" alt="" class="rounded-circle object-fit-cover round-20">
+                            <img src="{{ asset('admin/dist/images/svgs/icon-flag-sa.') }}svg" alt="" class="rounded-circle object-fit-cover round-20">
                           </div>
                           <p class="mb-0 fs-3">عربي (Arabic)</p>
                         </a>
@@ -495,7 +495,7 @@
                       <div class="message-body" data-simplebar>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-1.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-1.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">Roman Joined the Team!</h6>
@@ -504,7 +504,7 @@
                         </a>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-2.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-2.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">New message</h6>
@@ -513,7 +513,7 @@
                         </a>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-3.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-3.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">Bianca sent payment</h6>
@@ -522,7 +522,7 @@
                         </a>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-4.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-4.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">Jolly completed tasks</h6>
@@ -531,7 +531,7 @@
                         </a>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-5.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-5.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">John received payment</h6>
@@ -540,7 +540,7 @@
                         </a>
                         <a href="javascript:void(0)" class="py-6 px-7 d-flex align-items-center dropdown-item">
                           <span class="me-3">
-                            <img src="../../dist/images/profile/user-1.jpg" alt="user" class="rounded-circle" width="48" height="48" />
+                            <img src="{{ asset('admin/dist/images/profile/user-1.jpg') }}" alt="user" class="rounded-circle" width="48" height="48" />
                           </span>
                           <div class="w-75 d-inline-block v-middle">
                             <h6 class="mb-1 fw-semibold">Roman Joined the Team!</h6>
