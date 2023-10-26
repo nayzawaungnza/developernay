@@ -33,5 +33,9 @@ class Profile extends Model
         return Str::limit($text, Profile::EXCERPT_LENGTH);
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
     
 }

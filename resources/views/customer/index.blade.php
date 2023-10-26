@@ -14,23 +14,22 @@
           <div class="col-xl-6 col-lg-8">
             <div class="tf__banner_text">
               <h1>
-                Hi, I'm NAY ZAW AUNG! Creative
+                Hi, I'm {{ $profile->name }}! {{ $profile->heading }}
                 <span class="cd-headline rotate-1">
                   <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
                   <span class="cd-words-wrapper">
-                    <b class="is-visible">DEVELOPER</b>
-                    <b>Coder</b>
-                    <b>Player</b>
+                    @php
+                      $headline = explode("@", $profile->headline);
+                      
+                    @endphp
+                    @foreach ($headline as $key => $value)
+                    <b class="{{ $key == 0 ? 'is-visible' : 'not-visible' }}">{{ $value }}</b>
+                    @endforeach
+                    
                   </span>
                 </span>
               </h1>
-              <p>
-                I'm a passionate UI/UX designer with a mission to create
-                delightful and intuitive digital experiences. With a strong
-                foundation in design principles and a keen eye for detail, I
-                specialize in translating complex ideas into user-friendly
-                interfaces that captivate and engage.
-              </p>
+              {!! $profile->bio  !!}
               <ul>
                 <li>
                   <a class="common_btn" href="#"
