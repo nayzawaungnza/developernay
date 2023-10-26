@@ -15,6 +15,8 @@ class Profile extends Model
     protected $fillable = [
         'name', 
         'position', 
+        'heading',
+        'headline',
         'bio', 
         'ambition', 
         'ambition_icon', 
@@ -26,8 +28,10 @@ class Profile extends Model
         'is_active',
     ];
 
-    public function excerpt()
+    public function excerpt($text)
     {
-        return Str::limit($this->bio, Profile::EXCERPT_LENGTH);
+        return Str::limit($text, Profile::EXCERPT_LENGTH);
     }
+
+    
 }

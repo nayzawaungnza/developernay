@@ -2,6 +2,10 @@
 @section('title','Profile')
 @section('bread-title','Profile')
 @section('bread-current-title','Profile')
+@section('ckeditor')
+
+<link rel="stylesheet" href="{{ asset('admin/dist/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}">
+@endsection
 @section('content')
 <!-- MAIN CONTENT-->
 @if (session('success'))
@@ -36,6 +40,8 @@
         <th>Name</th>
         <th>Position</th>
         <th>Bio</th>
+        <th>Active</th>
+        <th>Status</th>
         <th>My Ambition</th>
         <th>My Purpose</th>
         <th>Feature Image</th>
@@ -53,13 +59,28 @@
           >
         </td>
         <td><span class="badge bg-info">{{ $profile->position }}</span></td>
-        <td>{!! $profile->excerpt() !!}</td>
+        <td>{!! $profile->excerpt($profile->bio) !!}</td>
         <td>
-            <img src="{{ asset('storage/'.$profile->ambition_icon) }}" alt="Ambition Icon" width="40" class="rounded-circle" />
-            {!! $profile->ambition !!}
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" name="active"  type="checkbox" id="activebtn"  @if($profile->is_active) checked @endif readonly/>
+          </div>
+          
+          
         </td>
         <td>
-            {!! $profile->purpose !!}
+          @if ($profile->status)
+          <span class="mb-1 badge rounded-pill bg-success">Publish</span>
+          @else
+          <span class="mb-1 badge rounded-pill bg-danger">unpublish</span>
+          @endif
+        </td>
+        <td>
+            <img src="{{ asset('storage/'.$profile->ambition_icon) }}" alt="Ambition Icon" width="40" class="rounded-circle" />
+            {!! $profile->excerpt($profile->ambition) !!}
+        </td>
+        <td>
+            {!! $profile->excerpt($profile->purpose) !!}
         </td>
         <td>
           <img src="{{ url('storage/app/public/'.$profile->image_1) }}" alt="Image 1" width="40" class="rounded-circle" />
@@ -84,9 +105,22 @@
   </table>
 </div>
 @else
+
+<div class="alert bg-light-danger text-info fade show" role="alert">
+  <div class="d-flex align-items-center text-danger font-medium">
+    <i class="ti ti-info-circle me-2 fs-4"></i>
+    Have not Profile Data!
+  </div>
+</div>
   
 @endif
 
 
+
+@endsection
+@section('ckeditorscript')
+
+<script src="{{ asset('admin/dist/libs/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+<script src="{{ asset('admin/dist/js/forms/bootstrap-switch.js') }}"></>
 
 @endsection

@@ -12,6 +12,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        //$profile = Profile::
         return view('customer.index');
     }
 

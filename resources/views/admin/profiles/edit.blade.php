@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('admin/dist/libs/dropzone/dist/min/dropzone.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/dist/libs/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/dist/libs/ckeditor/samples/css/samples.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/dist/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}">
 @endsection
 @section('content')
 <!-- MAIN CONTENT-->
@@ -28,20 +29,40 @@
               <div class="card-body border-top">
                 
                 <div class="row">
-                  <div class="col-sm-12 col-md-6">
+                  <div class="col-sm-12 col-md-3">
                     <div class="mb-3">
                       <label for="profile_name" class="control-label col-form-label">Name</label>
-                      <input type="text" name="profile_name" class="form-control @error('profile_name') is-invalid @enderror border border-primary" id="profile_name" value="{{ old('profile_name',$profile->name) }}" placeholder="Name Here">
+                      <input type="text" name="profile_name" class="form-control @error('profile_name') is-invalid @else border border-primary  @enderror" id="profile_name" value="{{ old('profile_name',$profile->name) }}" placeholder="Name Here">
                           @error('profile_name')
                             <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
                     </div>
                   </div>
-                  <div class="col-sm-12 col-md-6">
+                  <div class="col-sm-12 col-md-3">
                     <div class="mb-3">
                       <label for="profile_position" class="control-label col-form-label">Position</label>
-                      <input type="text" name="profile_position" class="form-control @error('profile_position') is-invalid @enderror border border-primary" id="profile_position" value="{{ old('profile_position',$profile->position) }}" placeholder="Position Here">
+                      <input type="text" name="profile_position" class="form-control @error('profile_position') is-invalid @else border border-primary  @enderror " id="profile_position" value="{{ old('profile_position',$profile->position) }}" placeholder="Position Here">
                           @error('profile_position')
+                              <small class="invalid-feedback">{{ $message }}</small>
+                            @enderror
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-3">
+                    <div class="mb-3">
+                      <label for="heading" class="control-label col-form-label">Heading</label>
+                      <input type="text" name="heading" class="form-control @error('heading') is-invalid @else border border-primary  @enderror" id="heading" value="{{ old('heading', $profile->heading) }}" placeholder="Heading Here">
+                          @error('heading')
+                              <small class="invalid-feedback">{{ $message }}</small>
+                            @enderror
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-3">
+                    <div class="mb-3">
+                      <label for="headline" class="control-label col-form-label">Headline</label>
+                      <input type="text" name="headline" class="form-control @error('headline') is-invalid @else border border-primary  @enderror" id="headline" value="{{ old('headline', $profile->headline) }}" placeholder="Headline Here (divided by @ symbol eg. --@--@--)">
+                          @error('headline')
                               <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
                     </div>
@@ -52,7 +73,7 @@
                     <div class="col-sm-12 col-md-12">
                         <div class="mb-3">
                           <label for="editor1" class="control-label col-form-label">Bio</label>
-                          <textarea cols="50" class="form-control @error('profile_bio') is-invalid @enderror border border-primary" id="editor1" name="profile_bio" rows="3" placeholder="Bio Here">{{ old('profile_bio',$profile->bio) }}
+                          <textarea cols="50" class="form-control @error('profile_bio') is-invalid @else border border-primary  @enderror" id="editor1" name="profile_bio" rows="3" placeholder="Bio Here">{{ old('profile_bio',$profile->bio) }}
                             </textarea>
                             @error('profile_bio')
                               <small class="invalid-feedback">{{ $message }}</small>
@@ -64,7 +85,7 @@
                     <div class="col-sm-12 col-md-8">
                         <div class="mb-3">
                           <label for="editor-ambition" class="control-label col-form-label">My Ambition</label>
-                          <textarea cols="50" class="form-control @error('editor_ambition') is-invalid @enderror border border-primary" id="editor-ambition" name="editor_ambition" rows="3" placeholder="My Ambition Here">{{ old('editor_ambition', $profile->ambition) }}
+                          <textarea cols="50" class="form-control @error('editor_ambition') is-invalid @else border border-primary  @enderror " id="editor-ambition" name="editor_ambition" rows="3" placeholder="My Ambition Here">{{ old('editor_ambition', $profile->ambition) }}
                             </textarea>
                             @error('editor_ambition')
                               <small class="invalid-feedback">{{ $message }}</small>
@@ -99,7 +120,7 @@
                     <div class="col-sm-12 col-md-8">
                         <div class="mb-3">
                           <label for="editor-purpose" class="control-label col-form-label">My Purpose</label>
-                          <textarea cols="50" class="form-control @error('editor_purpose') is-invalid @enderror border border-primary" id="editor-purpose" name="editor_purpose" rows="3" placeholder="My Purpose Here">{{ old('editor_purpose', $profile->purpose) }}
+                          <textarea cols="50" class="form-control @error('editor_purpose') is-invalid @else border border-primary  @enderror" id="editor-purpose" name="editor_purpose" rows="3" placeholder="My Purpose Here">{{ old('editor_purpose', $profile->purpose) }}
                             </textarea>
                             @error('editor_purpose')
                               <small class="invalid-feedback">{{ $message }}</small>
@@ -142,7 +163,7 @@
                         @enderror
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                       <div class="col-form-label">Feature Image 2</div>
                       <div class="image-wrap">
                         <div class="image-container feature_img_2">
@@ -160,6 +181,36 @@
                       </div>
                     </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-check form-switch">
+                      <label class="form-check-label col-form-label" for="activebtn">Active (on/off)</label>
+
+                        @if ($profile->is_active)
+                        <input class="form-check-input" name="active"  type="checkbox" id="activebtn" checked/>
+                        @else
+                        <input class="form-check-input" name="active"  type="checkbox" id="activebtn" />
+                        @endif
+                      
+                    </div>
+                   
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check form-check-inline">
+                      <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" class="form-control @error('publish') is-invalid @enderror" value="1" id="publishLable" name="publish"  @if($profile->status == '1') checked @endif>
+                          @error('publish')
+                            <small class="invalid-feedback text-danger">{{ $message }}</small>
+                          @enderror
+                          <label class="custom-control-label col-form-label" for="publishLable">Publish</label>
+
+                          <input type="radio" class="custom-control-input" value="0" id="unpublishLabel" name="publish" @if($profile->status == '0') checked @endif>
+                          <label class="custom-control-label col-form-label" for="unpublishLabel">UnPublish</label>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
 
                 
             
@@ -167,7 +218,7 @@
               
               <div class="p-3 border-top">
                 <div class="action-form">
-                  <div class="mb-3 mb-0 text-start">
+                  <div class="mb-3 text-start">
                     <button type="submit" class="btn btn-info rounded-pill px-4 waves-effect waves-light">
                       Save
                     </button>
@@ -189,6 +240,10 @@
 @section('ckeditorscript')
 <script src="{{ asset('admin/dist/libs/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('admin/dist/libs/ckeditor/samples/js/sample.js') }}"></script>
+
+<script src="{{ asset('admin/dist/libs/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+<script src="{{ asset('admin/dist/js/forms/bootstrap-switch.js') }}"></script>
+
 @endsection
 @section('script')
     <script>

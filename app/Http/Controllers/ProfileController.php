@@ -108,6 +108,12 @@ class ProfileController extends Controller
         $dbProfileData = Profile::find($id);
 
         $updateProfileData = $this->getUpdateProfileData($request);
+        if($request->active == 'on'):
+            $updateProfileData['is_active'] = 1;
+        else:
+            $updateProfileData['is_active'] = 0;
+        endif;
+        //dd($updateProfileData);
 
         if ( $dbProfileData->ambition_icon != null):
             if($request->hasFile('ambition_icon') ):
@@ -171,11 +177,16 @@ class ProfileController extends Controller
             endif;
             
         endif;
-        $updateProfileData['status'] = $dbProfileData->status;
-        $updateProfileData['is_active'] = $dbProfileData->is_active;
+        // $updateProfileData['status'] = $dbProfileData->status;
+        // $updateProfileData['is_active'] = $dbProfileData->is_active;
 
         //dump($dbProfileData);
         //dd($updateProfileData);
+
+        if ($updateProfileData['is_active']) {
+            // If  update profile data is set as active, deactivate all other data profiles
+            Profile::where('id', '!=', $id)->update(['is_active' => false]);
+        }
 
         Profile::where('id',$id)->update($updateProfileData);
 
@@ -211,6 +222,8 @@ class ProfileController extends Controller
         Validator::make($request->all(),  [
             'profile_name' => ['required', 'string', 'max:255'],
             'profile_position' => ['required', 'string'],
+            'heading' => ['required', 'string'],
+            'headline' => ['required', 'string'],
             'profile_bio' => ['required'],
             'editor_ambition' => ['required'],
             'editor_purpose' => ['required'],
@@ -223,6 +236,8 @@ class ProfileController extends Controller
         return [
             'name' => $request->profile_name,
             'position' => $request->profile_position,
+            'heading' => $request->heading,
+            'headline' => $request->headline,
             'bio' => $request->profile_bio,
             'ambition' => $request->editor_ambition,
             //'ambition_icon', 
@@ -240,9 +255,12 @@ class ProfileController extends Controller
             //'profile_name' => ['required', 'string', 'max:255', Rule::unique('profiles', 'profile_name')->ignore($request->id)],
             'profile_name' => ['required', 'string', 'max:255'],
             'profile_position' => ['required', 'string'],
+            'heading' => ['required', 'string'],
+            'headline' => ['required', 'string'],
             'profile_bio' => ['required'],
             'editor_ambition' => ['required'],
             'editor_purpose' => ['required'],
+            'publish' => ['required'],
             //'ambition_icon' => ['mimes:jpeg,png,gif,jpg,webp,svg','required','image','max:2048'],
             //'purpose_icon' => ['mimes:jpeg,png,gif,jpg,webp,svg','required','image','max:2048'],
             //'feature_image_1' => ['mimes:jpeg,png,gif,jpg,webp,svg','required','image','max:2048'],
@@ -252,10 +270,14 @@ class ProfileController extends Controller
         return [
             'name' => $request->profile_name,
             'position' => $request->profile_position,
+            'heading' => $request->heading,
+            'headline' => $request->headline,
             'bio' => $request->profile_bio,
             'ambition' => $request->editor_ambition,
             //'ambition_icon', 
             'purpose' => $request->editor_purpose,
+            //'is_active' => $request->active,
+            'status' => $request->publish,
             //'purpose_icon', 
             //'image_1',
             //'image_2',

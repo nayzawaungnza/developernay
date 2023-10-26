@@ -28,20 +28,40 @@
               <div class="card-body border-top">
                 
                 <div class="row">
-                  <div class="col-sm-12 col-md-6">
+                  <div class="col-sm-12 col-md-3">
                     <div class="mb-3">
                       <label for="profile_name" class="control-label col-form-label">Name</label>
-                      <input type="text" name="profile_name" class="form-control @error('profile_name') is-invalid @enderror border border-primary" id="profile_name" value="{{ old('profile_name') }}" placeholder="Name Here">
+                      <input type="text" name="profile_name" class="form-control @error('profile_name') is-invalid @else border border-primary @enderror " id="profile_name" value="{{ old('profile_name') }}" placeholder="Name Here">
                           @error('profile_name')
                             <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
                     </div>
                   </div>
-                  <div class="col-sm-12 col-md-6">
+                  <div class="col-sm-12 col-md-3">
                     <div class="mb-3">
                       <label for="profile_position" class="control-label col-form-label">Position</label>
-                      <input type="text" name="profile_position" class="form-control @error('profile_position') is-invalid @enderror border border-primary" id="profile_position" value="{{ old('profile_position') }}" placeholder="Position Here">
+                      <input type="text" name="profile_position" class="form-control @error('profile_position') is-invalid @else border border-primary  @enderror" id="profile_position" value="{{ old('profile_position') }}" placeholder="Position Here">
                           @error('profile_position')
+                              <small class="invalid-feedback">{{ $message }}</small>
+                            @enderror
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-3">
+                    <div class="mb-3">
+                      <label for="heading" class="control-label col-form-label">Heading</label>
+                      <input type="text" name="heading" class="form-control @error('heading') is-invalid @else border border-primary  @enderror" id="heading" value="{{ old('heading') }}" placeholder="Heading Here">
+                          @error('heading')
+                              <small class="invalid-feedback">{{ $message }}</small>
+                            @enderror
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-3">
+                    <div class="mb-3">
+                      <label for="headline" class="control-label col-form-label">Headline</label>
+                      <input type="text" name="headline" class="form-control @error('headline') is-invalid @else border border-primary  @enderror " id="headline" value="{{ old('headline') }}" placeholder="Headline Here (divided by @ symbol eg. --@--@--)">
+                          @error('headline')
                               <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
                     </div>
@@ -52,7 +72,7 @@
                     <div class="col-sm-12 col-md-12">
                         <div class="mb-3">
                           <label for="editor1" class="control-label col-form-label">Bio</label>
-                          <textarea cols="50" class="form-control @error('profile_bio') is-invalid @enderror border border-primary" id="editor1" name="profile_bio" rows="3" placeholder="Bio Here">{{ old('profile_bio') }}
+                          <textarea cols="50" class="form-control @error('profile_bio') is-invalid @else border border-primary  @enderror" id="editor1" name="profile_bio" rows="3" placeholder="Bio Here">{{ old('profile_bio') }}
                             </textarea>
                             @error('profile_bio')
                               <small class="invalid-feedback">{{ $message }}</small>
@@ -64,7 +84,7 @@
                     <div class="col-sm-12 col-md-8">
                         <div class="mb-3">
                           <label for="editor-ambition" class="control-label col-form-label">My Ambition</label>
-                          <textarea cols="50" class="form-control @error('editor_ambition') is-invalid @enderror border border-primary" id="editor-ambition" name="editor_ambition" rows="3" placeholder="My Ambition Here">{{ old('editor_ambition') }}
+                          <textarea cols="50" class="form-control @error('editor_ambition') is-invalid @else border border-primary  @enderror" id="editor-ambition" name="editor_ambition" rows="3" placeholder="My Ambition Here">{{ old('editor_ambition') }}
                             </textarea>
                             @error('editor_ambition')
                               <small class="invalid-feedback">{{ $message }}</small>
@@ -95,7 +115,7 @@
                     <div class="col-sm-12 col-md-8">
                         <div class="mb-3">
                           <label for="editor-purpose" class="control-label col-form-label">My Purpose</label>
-                          <textarea cols="50" class="form-control @error('editor_purpose') is-invalid @enderror border border-primary" id="editor-purpose" name="editor_purpose" rows="3" placeholder="My Purpose Here">{{ old('editor_purpose') }}
+                          <textarea cols="50" class="form-control @error('editor_purpose') is-invalid @else border border-primary  @enderror " id="editor-purpose" name="editor_purpose" rows="3" placeholder="My Purpose Here">{{ old('editor_purpose') }}
                             </textarea>
                             @error('editor_purpose')
                               <small class="invalid-feedback">{{ $message }}</small>
