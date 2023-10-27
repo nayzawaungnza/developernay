@@ -103,7 +103,7 @@
               <li class="sidebar-item">
                 <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
                   <span class="d-flex">
-                    <i class="ti ti-list"></i>
+                    <i class="ti ti-list-details"></i>
                   </span>
                   <span class="hide-menu">Services</span>
                 </a>
@@ -127,6 +127,35 @@
                 </ul>
               </li>
               {{-- end services --}}
+
+              {{-- portfolio --}}
+              <li class="sidebar-item">
+                <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+                  <span class="d-flex">
+                    <i class="ti ti-topology-star-3"></i>
+                  </span>
+                  <span class="hide-menu">Portfolio</span>
+                </a>
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="{{ route('admin#service#index') }}" class="sidebar-link">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">All Portfolio</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="{{ route('admin#service#create') }}" class="sidebar-link">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">Add New</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              {{-- end portfolio --}}
               
               <!-- ============================= -->
               <!-- Apps -->

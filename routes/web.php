@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,4 +66,12 @@ Route::group(['prefix'=>'admin', 'middleware'=>['admin_auth:admin']],function(){
     Route::post('/service/update/{id}',[ServiceController::class,'update'])->name('admin#service#update');
     Route::get('/service/delete/{id}',[ServiceController::class,'destroy'])->name('admin#service#destroy');
 
+    //Portfolio
+    Route::get('/portfolio',[PortfolioController::class,'index'])->name('admin#portfolio#index');
+    Route::get('/portfolio/create',[PortfolioController::class,'create'])->name('admin#portfolio#create');
+    Route::post('/portfolio/store',[PortfolioController::class,'store'])->name('admin#portfolio#store');
+    Route::get('/portfolio/edit/{id}',[PortfolioController::class,'edit'])->name('admin#portfolio#edit');
+    Route::post('/portfolio/update/{id}',[PortfolioController::class,'update'])->name('admin#portfolio#update');
+    Route::get('/portfolio/delete/{id}',[PortfolioController::class,'destroy'])->name('admin#portfolio#destroy');
+    
 });
