@@ -98,6 +98,35 @@
               </li>
 
               {{-- end profile data --}}
+
+              {{-- services --}}
+              <li class="sidebar-item">
+                <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
+                  <span class="d-flex">
+                    <i class="ti ti-list"></i>
+                  </span>
+                  <span class="hide-menu">Services</span>
+                </a>
+                <ul aria-expanded="false" class="collapse first-level">
+                  <li class="sidebar-item">
+                    <a href="{{ route('admin#service#index') }}" class="sidebar-link">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">All Services</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="{{ route('admin#service#create') }}" class="sidebar-link">
+                      <div class="round-16 d-flex align-items-center justify-content-center">
+                        <i class="ti ti-circle"></i>
+                      </div>
+                      <span class="hide-menu">Add New</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              {{-- end services --}}
               
               <!-- ============================= -->
               <!-- Apps -->

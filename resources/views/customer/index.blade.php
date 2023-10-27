@@ -14,7 +14,7 @@
           <div class="col-xl-6 col-lg-8">
             <div class="tf__banner_text">
               <h1>
-                Hi, I'm {{ $profile->name }}! {{ $profile->heading }}
+                Hi, I'm {{ $profile->name }}!<br> {{ $profile->heading }}
                 <span class="cd-headline rotate-1">
                   <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
                   <span class="cd-words-wrapper">
