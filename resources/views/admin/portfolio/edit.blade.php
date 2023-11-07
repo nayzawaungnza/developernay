@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
-@section('title','Service')
-@section('bread-title','Service')
+@section('title','Portfolio')
+@section('bread-title','Portfolio')
 @section('bread-current-title','Edit')
 
 @section('ckeditor')
@@ -18,21 +18,31 @@
                             ---------------- -->
 
             <div class="card w-100">
-              <form action="{{ route('admin#service#update',$service->id) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('admin#portfolio#update', $portfolio->id) }}" method="post" enctype="multipart/form-data">
               @csrf
                 <div class="card-body pb-0">
-                <h5>Edit Service</h5>
+                <h5>Edit Portfolio</h5>
                 
                 
               </div>
               <div class="card-body border-top">
                 
                 <div class="row">
-                  <div class="col-sm-12 col-md-12">
+                  <div class="col-sm-12 col-md-6">
                     <div class="mb-3">
-                      <label for="service_title" class="control-label col-form-label">Title</label>
-                      <input type="text" name="service_title" class="form-control @error('service_title') is-invalid @else border border-primary @enderror " id="service_title" value="{{ old('service_title',$service->title) }}" placeholder="Title Here">
-                          @error('service_title')
+                      <label for="portfolio_title" class="control-label col-form-label">Title</label>
+                      <input type="text" name="portfolio_title" class="form-control @error('portfolio_title') is-invalid @else border border-primary @enderror " id="portfolio_title" value="{{ old('portfolio_title', $portfolio->title) }}" placeholder="Title Here">
+                          @error('portfolio_title')
+                            <small class="invalid-feedback">{{ $message }}</small>
+                        @enderror
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                      <label for="portfolio_website" class="control-label col-form-label">Website</label>
+                      <input type="text" name="portfolio_website" class="form-control @error('portfolio_website') is-invalid @else border border-primary @enderror " id="portfolio_website" value="{{ old('portfolio_website', $portfolio->website) }}" placeholder="Website Here (eg. www.example.com)">
+                          @error('portfolio_website')
                             <small class="invalid-feedback">{{ $message }}</small>
                         @enderror
                     </div>
@@ -43,10 +53,10 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-8">
                         <div class="mb-3">
-                          <label for="service_content" class="control-label col-form-label">Content</label>
-                          <textarea cols="50" class="form-control @error('service_content') is-invalid @else border border-primary  @enderror" id="service_content" name="service_content" rows="3" placeholder="Content Here">{{ old('service_content', $service->content) }}
+                          <label for="portfolio_content" class="control-label col-form-label">Content</label>
+                          <textarea cols="50" class="form-control @error('portfolio_content') is-invalid @else border border-primary  @enderror" id="portfolio_content" name="portfolio_content" rows="3" placeholder="My Ambition Here">{{ old('portfolio_content', $portfolio->content) }}
                             </textarea>
-                            @error('service_content')
+                            @error('portfolio_content')
                               <small class="invalid-feedback">{{ $message }}</small>
                             @enderror
                         </div>
@@ -54,20 +64,20 @@
                     <div class="col-md-4">
                         <div class="col-form-label">Feature Image</div>
                         <div class="image-wrap">
-                          <div class="image-container service_img">
+                          <div class="image-container portfolio_img">
                               <i class="fa fa-user"></i>
-                              @if($service->image)
-                              <img src="{{ url('storage/app/services/'.$service->image) }}" alt="" srcset="">
+                              @if ($portfolio->image)
+                              <img src="{{ asset('storage/' . $portfolio->image) }}" alt="" srcset="">
                               @else
                               <img src="{{ asset('admin/dist/images/profile/add-image.png') }}" alt="" srcset="">
                               @endif
                               
                           </div>
-                          <label for="service_image" class="camera-icon">
+                          <label for="portfolio_image" class="camera-icon">
                               <i class="fa fa-camera"></i>
                           </label>
-                          <input type="file" class="form-control @error('service_image') is-invalid @enderror" name="service_image" id="service_image" accept="image/*" hidden >
-                          @error('service_image')
+                          <input type="file" class="form-control @error('portfolio_image') is-invalid @enderror" name="portfolio_image" id="portfolio_image" accept="image/*" hidden >
+                          @error('portfolio_image')
                               <small class="invalid-feedback">{{ $message }}</small>
                           @enderror
                       </div>
@@ -75,22 +85,6 @@
                     </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-sm-12 col-md-12">
-                    <div class="mb-3">
-                      <label for="publishID" class="control-label col-form-label">Title</label>
-                      <select name="publish_status" class="form-select form-control @error('publish_status') is-invalid @else border border-primary @enderror " id="publishID">
-                        <option value=""  @selected(old('publish_status', $service->status) == '')>Choose Status...</option>
-                        <option value="1" @selected(old('publish_status', $service->status) == '1')>Publish</option>
-                        <option value="0" @selected(old('publish_status', $service->status) == '0')>unpublish</option>
-                      </select>
-                          @error('publish_status')
-                            <small class="invalid-feedback">{{ $message }}</small>
-                        @enderror
-                    </div>
-                  </div>
-                  
-                </div>
                 
               </div>{{-- card body --}}
               
@@ -98,7 +92,7 @@
                 <div class="action-form">
                   <div class="mb-3 mb-0 text-start">
                     <button type="submit" class="btn btn-info rounded-pill px-4 waves-effect waves-light">
-                      Save
+                      Update
                     </button>
                     {{-- <button type="submit" class="btn btn-dark rounded-pill px-4 waves-effect waves-light">
                       Cancel
@@ -124,7 +118,7 @@
         //Dropzone.discover();
         initSample();
 
-        var editor1 = CKEDITOR.replace("service_content", {
+        var editor1 = CKEDITOR.replace("portfolio_content", {
         extraAllowedContent: "div",
         height: 300,
       });
@@ -155,11 +149,11 @@
 
       
 
-      var service_image = document.querySelector("#service_image");
-        service_image.onchange = function(e){
+      var portfolio_image = document.querySelector("#portfolio_image");
+        portfolio_image.onchange = function(e){
             if(e.target.files.length>0){
                 var src=URL.createObjectURL(e.target.files[0]);
-                var image = document.querySelector(".service_img img");
+                var image = document.querySelector(".portfolio_img img");
                 image.src= src;
             }
         }

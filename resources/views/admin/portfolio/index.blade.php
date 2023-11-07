@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
-@section('title','Service')
-@section('bread-title','Service')
-@section('bread-current-title','Service List')
+@section('title','Portfolio')
+@section('bread-title','Portfolio')
+@section('bread-current-title','Portfolio List')
 @section('ckeditor')
 
 <link rel="stylesheet" href="{{ asset('admin/dist/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}">
@@ -19,9 +19,9 @@
 @endif
 <div class="action-btn layout-top-spacing mb-7 d-flex align-items-center justify-content-between">
     <h5 class="mb-0 fs-5 fw-semibold">Improving Work Processes</h5>
-    <a href="{{ route('admin#service#create') }}" id="add-list" class="btn btn-primary">Add New Service</a>
+    <a href="{{ route('admin#portfolio#create') }}" id="add-list" class="btn btn-primary">Add New Service</a>
 </div>
-@if ($services->isNotEmpty())
+@if ($portfolios->isNotEmpty())
 <div class="table-responsive">
   <table
     id="demo-foo-addrow"
@@ -46,35 +46,35 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($services as $service)
+      @foreach ($portfolios as $portfolio)
       <tr>
         <td>1</td>
         <td>
           <a href="javascript:void(0)" class="link"
             >
-            {{ $service->title }}</a
+            {{ $portfolio->title }}</a
           >
         </td>
-        <td>{!! $service->excerpt($service->content) !!}</td>
+        <td>{!! $portfolio->excerpt($portfolio->content) !!}</td>
         
         <td>
-          @if ($service->status)
+          @if ($portfolio->status)
           <span class="mb-1 badge rounded-pill bg-success">Publish</span>
           @else
           <span class="mb-1 badge rounded-pill bg-danger">unpublish</span>
           @endif
         </td>
         <td>
-            <img src="{{ asset('storage/'.$service->image) }}" alt="Service Feature Image" width="40" class="rounded-circle" />
+            <img src="{{ asset('storage/portfolios/' .$portfolio->image) }}" alt="Portfolio Feature Image" width="40" class="rounded-circle" />
         </td>
         <td>
-            {{ $service->created_at }} - {{ $service->updated_at }}
+            {{ $portfolio->created_at }} - {{ $portfolio->updated_at }}
         </td>
         
         <td>
-          <a href="{{ route('admin#service#edit', $service->id) }}" class="justify-content-center  btn mb-1 btn-warning d-flex align-items-center"><i class="ti ti-edit"></i></a>
+          <a href="{{ route('admin#portfolio#edit', $portfolio->id) }}" class="justify-content-center  btn mb-1 btn-warning d-flex align-items-center"><i class="ti ti-edit"></i></a>
           <a href="#" class="justify-content-center  btn mb-1 btn-success d-flex align-items-center"><i class="ti ti-eye"></i></a>
-          <a href="{{ route('admin#service#destroy', $service->id) }}" class="justify-content-center  btn mb-1 btn-danger d-flex align-items-center"><i class="ti ti-trash"></i></a>
+          <a href="{{ route('admin#portfolio#destroy', $portfolio->id) }}" class="justify-content-center  btn mb-1 btn-danger d-flex align-items-center"><i class="ti ti-trash"></i></a>
         </td>
       </tr>
       @endforeach
@@ -94,7 +94,7 @@
 <div class="alert bg-light-danger text-info fade show" role="alert">
   <div class="d-flex align-items-center text-danger font-medium">
     <i class="ti ti-info-circle me-2 fs-4"></i>
-    Have not Services!
+    Have not Portfolios!
   </div>
 </div>
   

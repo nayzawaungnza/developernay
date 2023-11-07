@@ -13,15 +13,19 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('content');
+            $table->string('website');
             $table->string('image')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
+    
 
     /**
      * Reverse the migrations.

@@ -38,8 +38,8 @@ class ServiceController extends Controller
             $serviceImage = $request->file('service_image');
             // Get the original file name
             $serviceName = uniqid().'-'.$serviceImage->getClientOriginalName();
-            $serviceImage->StoreAs('public',$serviceName);
-            //Storage::disk('public')->put('public/'.$serviceName, file_get_contents($serviceImage));
+            //$serviceImage->StoreAs('public',$serviceName);
+            Storage::disk('public')->put('services/'.$serviceName, file_get_contents($serviceImage));
 
             $service['image'] = $serviceName;
         endif;
@@ -79,8 +79,8 @@ class ServiceController extends Controller
                 $serviceImage = $request->file('service_image');
                 // Get the original file name
                 $serviceName = uniqid().'-'.$serviceImage->getClientOriginalName();
-                $serviceImage->StoreAs('public',$serviceName);
-                //Storage::disk('public')->put('public/'.$ambitionName, file_get_contents($ambitionImage));
+                //$serviceImage->StoreAs('public',$serviceName);
+                Storage::disk('public')->put('services/'.$serviceName, file_get_contents($serviceImage));
 
                 $service['image'] = $serviceName;
             else:
@@ -101,7 +101,7 @@ class ServiceController extends Controller
     {
         $service = Service::find($id);
         if ($service->image != null):
-            Storage::delete('public/'.$service->image);
+            Storage::delete('public/services/'.$service->image);
         endif;
         Service::where('id',$id)->delete();
         return back()->with(['success'=>'Service has been deleted.']);
